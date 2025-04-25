@@ -20,7 +20,7 @@ class PDFLoader:
         docs = self.loader.load()
         
         self.embedding = GoogleGenerativeAIEmbeddings(
-            google_api_key="AIzaSyDmvQjyWNCDVo1f1GOX41ip7LVe9FXcRNc",
+            google_api_key="APIKEY",
             model="models/embedding-001",
         )
 
@@ -38,7 +38,7 @@ class PDFLoader:
 
 llm = ChatGoogleGenerativeAI(
     model="gemini-2.0-flash-001",
-    google_api_key="AIzaSyDmvQjyWNCDVo1f1GOX41ip7LVe9FXcRNc",
+    google_api_key="APIKEY",
 )
 
 class AgentState(TypedDict):
