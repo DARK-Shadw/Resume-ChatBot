@@ -118,13 +118,16 @@ class Agent:
 
     
 def main():
-
-        question = input("Enter the question: ")
         pdf_loader = PDFLoader("Resume.pdf")
         vectorstore = pdf_loader.vectorstore
         agent = Agent(llm, vectorstore) 
 
-        result = agent.graph.invoke({"question": question})
+        while True:
+            question = input("Ask a question (or type 'exit'): ")
+            if question.lower() == "exit":
+                break
+            result = agent.graph.invoke({"question": question})
+            print("Answer:", result['final_answer'])
 
 
 main()
